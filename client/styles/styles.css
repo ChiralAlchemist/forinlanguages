@@ -13,7 +13,10 @@ textarea {
 
 #textInput {
     width: 100%;
+    color:blue;
+    overflow-y: auto;
 }
+
 
 .drop-box {
     background: #F8F8F8;
