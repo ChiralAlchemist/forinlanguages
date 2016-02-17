@@ -172,7 +172,7 @@ angular.module('forinlanguages.peer', [])
   }
   $scope.destroyPeer = function() {
     console.log("destroyed func!");
-    console.log('before', $scope.me);
+    console.log('before', $scope.me); 
     $scope.me.destroy();
     console.log("after", $scope.me);
   };
