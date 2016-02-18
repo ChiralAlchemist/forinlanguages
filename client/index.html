@@ -16,6 +16,7 @@
     <script src="lib/localforage/dist/localforage.min.js"></script>
     <script src="lib/angular-localforage/dist/angular-localForage.min.js"></script>
     <script src="lib/underscore/underscore-min.js"></script>
+
     <script src="lib/filesaver/FileSaver.min.js"></script>
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="lib/semantic/dist/semantic.min.js"></script>
@@ -23,6 +24,7 @@
     <script src="app/services/services.js"></script>
     <script src="app/application.js"></script>
   </head>
+
   <body ng-controller="PeerController" class = "container">
     <div class ="ui two column doubling stackable grid container">
     
@@ -31,6 +33,11 @@
       <i class ="lab icon"></i>
       <div class = "content">For-In Languages</div>
     </h1>
+
+  <body ng-controller="PeerController" class = "container">
+    <h1>For-In Languages</h1/>
+    
+
     <label for="input">Username:</label>
       <input type="text" name="username" ng-model="username">
 
@@ -45,12 +52,13 @@
       
 
 
+
       <label for="input">Peer:</label>
       <input type="text" name="input" ng-model="person"  ng-keypress="isEnter($event,connectTo,[])" value ="">
       <button ng-click="connectTo()">Connect</button>
 
 
-      <h3>My ID: {{ me.id }}</h3>/
+      <h3>My ID: {{ me.id }}</h3>
     <a href="{{url}}">Your URL</a>
     <h3>Downloads:</h3>
     <div placeholder="No new downloads" ng-model ='files'>
@@ -69,6 +77,7 @@
         
         
       </div>
+
       <!--  <button ng-click="destroyPeer()">Disconnect</button>
       <button ng-click="logPeers()">Log peers</button> -->
       <div class = "column">
@@ -109,6 +118,7 @@
             </div>
           </div>
           
+
         </div>
         
       </div>
