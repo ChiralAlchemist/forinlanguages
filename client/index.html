@@ -9,106 +9,36 @@
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
     <link rel='stylesheet' href="lib/semantic/dist/semantic.min.css"/>
 
-    <script src="lib/angular/angular.min.js"></script>
-    <script src="lib/angular-file-model/angular-file-model.js"></script>
+    
+
     <script src="lib/peerjs/peer.min.js"></script>
     <script src="lib/moment/min/moment.min.js"></script>
     <script src="lib/file-saver.js/FileSaver.js"></script>
     <script src="lib/localforage/dist/localforage.min.js"></script>
-    <script src="lib/angular-localforage/dist/angular-localForage.min.js"></script>
+    
     <script src="lib/underscore/underscore-min.js"></script>
-    <script src="lib/filesaver/FileSaver.min.js"></script>
+    <!-- <script src="lib/filesaver/FileSaver.min.js"></script> -->
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="lib/semantic/dist/semantic.min.js"></script>
 
 
-
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-file-model/angular-file-model.js"></script>
+    <script src="lib/angular-localforage/dist/angular-localForage.min.js"></script>
+    <script src="lib/angular-route/angular-route.min.js"></script>
 
     <script src="app/peer/peer.js"></script>
     <script src="app/services/services.js"></script>
     <script src="app/application.js"></script>
+
+    
   </head>
 
-  <body ng-controller="PeerController" class = "container">
-    <div class ="ui two column doubling stackable grid container">
+  <body class = "container">
+
+    <div ng-view> </div>
+
+  <!-- angular dependencies -->
     
-    <div class ="column">
-    <h1 class ="ui header">
-      <i class ="lab icon"></i>
-      <div class = "content">For-In Languages</div>
-    </h1>
 
-    <label for="input">Username:</label>
-      <input type="text" name="username" ng-model="username">
-
-
-      <label for="input">Peer:</label>
-      <input type="text" name="input" ng-model="person"  ng-keypress="isEnter($event,connectTo,[])" value ="">
-      <button ng-click="connectTo()">Connect</button>
-
-
-      <h3>My ID: {{ me.id }}</h3>/
-
-
-    <a href="{{url}}">Your URL</a>
-    <h3>Downloads:</h3>
-    <div placeholder="No new downloads" ng-model ='files'>
-      <div class='message_item' ng-repeat="val in files">
-        <a href="{{val}}">{{ val }}</a>
-      </div>
-    </div>
-    <h3>Peers:</h3>
-      <div placeholder="No new messages" ng-model ='peers'>
-        <div class='peer_item' ng-repeat="val in peers">
-          <div>{{ val.peer }}</div>
-
-        </div>
-        <h3>Share files</h3>
-        <input type="file" value="choosefile" file-model='file' multiple>
-        
-        
-      </div>
-
-      <div class = "column">
-        <h3 class ="ui header">
-        <i class = "comments icon"></i>
-        <div class="content">Chat Room:</div>
-        </h3>
-        <div class='chatArea'>
-          <form ng-submit ='sendData("message")'>
-            <div> Enter Chat messages</div>
-            <textarea name="message" id="textInput" ng-model='message' ng-keypress="isEnter($event,sendData,['message'])" required></textarea>
-            <div>{{ test }} </div>
-            <button type='submit'>Send</button>
-          </form>
-          
-          
-          
-          <h3>Messages</h3>
-          <div class= "messageBoard ui feed">
-            <div  placeholder="No new messages" ng-model ='messages'>
-              <div class='message_item' ng-repeat="val in messages track by $index">
-                <div class="event">
-                  <div class="label">
-                    <img class="ui avatar image" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Vanamo_Logo.png">
-                    <a class="user">{{ val.name }}</a>
-                  </div>
-                  <div class="content">
-                    
-                    
-                    {{ val.rawdat }}
-                    <div class="date">{{ val.time }}</div>
-                    
-                    
-                  </div>
-                  </div> <!--envent closing tag -->
-                </div>
-              </div>
-            </div>
-          </div>
-          
-
-        </div>
-        
-      </div>
-    </body>
+  </body>

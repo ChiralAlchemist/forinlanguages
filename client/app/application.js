@@ -1,19 +1,22 @@
-angular.module('forinlanguages', [
+var forinlanguagesApp = angular.module('forinlanguages', [
   'file-model',
   'LocalForageModule',
   'forinlanguages.services',
-  'forinlanguages.peer'
-])
+  'forinlanguages.peer',
+  'ngRoute'
+]);
 
-
-
-// .config(function($routeProvider,$httpProvider){
-//     $routeProvider
-//     .when('/', {
-//         templateUrl: 'index.html',
-//         controller : 'PeerController'
-//     })
-// })
-// Main app stuff here
+forinlanguagesApp.config(function($routeProvider){
+    $routeProvider
+    .when('/', {
+        templateUrl: 'views/landingPage.html',
+        controller : 'PeerController'
+    })
+    .when('/app', {
+        templateUrl:'views/app.html',
+        controller : 'PeerController'
+    });
+});
+//Main app stuff here
 
 
