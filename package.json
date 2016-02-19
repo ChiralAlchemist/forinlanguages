@@ -1,5 +1,5 @@
 {
-  "name": "peerJSp2p",
+  "name": "peerjsp2p",
   "version": "0.0.0",
   "description": "our greenfield project peer 2 peer sharing",
   "dependencies": {
@@ -12,6 +12,6 @@
   },
   "scripts": {
     "start": "node server/app.js",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "bower install"
   }
 }
