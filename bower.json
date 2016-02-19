@@ -29,6 +29,7 @@
     "angular-localforage": "^1.2.5",
     "underscore": "^1.8.3",
     "semantic": "^2.1.8",
-    "angular-route": "^1.5.0"
+    "angular-route": "^1.5.0",
+    "angular-ui-router": "^0.2.18"
   }
 }

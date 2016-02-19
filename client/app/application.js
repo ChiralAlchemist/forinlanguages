@@ -3,7 +3,8 @@ var forinlanguagesApp = angular.module('forinlanguages', [
   'LocalForageModule',
   'forinlanguages.services',
   'forinlanguages.peer',
-  'ngRoute'
+  'ngRoute',
+  'ui.router'
 ]);
 
 forinlanguagesApp.config(function($routeProvider){
@@ -17,6 +18,10 @@ forinlanguagesApp.config(function($routeProvider){
         controller : 'PeerController'
     });
 });
+
+forinlanguagesApp.config(function($stateProvider, $urlRouterProvider){
+  $urlRouterProvider.otherwise("")
+})
 //Main app stuff here
 
 
