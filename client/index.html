@@ -13,7 +13,6 @@
 
     <script src="lib/peerjs/peer.min.js"></script>
     <script src="lib/moment/min/moment.min.js"></script>
-    <script src="lib/FileSaver/FileSaver.js"></script>
     <script src="lib/localforage/dist/localforage.min.js"></script>
     
     <script src="lib/underscore/underscore-min.js"></script>
@@ -36,7 +35,11 @@
 
   <body class = "container">
 
-    <div ng-view> </div>
+    
+    <a ui-sref="landing">showtest</a>
+    <a ui-sref="app">to the app</a>
+    <div ui-view> </div>
+    <!-- <a ui-sref="test"> test </a> -->
     
   </body>
 
