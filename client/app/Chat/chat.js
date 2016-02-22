@@ -27,12 +27,12 @@ angular.module('forinlanguages.chat', [])
             if(ChatFactory.peers[conn.peer] !== undefined) {
                 if(!ChatFactory.peers[conn.peer].open) {
                 delete ChatFactory.peers[conn.peer];
-                $scope.messages.push({rawdat: "User with ID " + conn.peer + " left the chat."});
+                //$scope.messages.push({rawdat: "User with ID " + conn.peer + " left the chat."});
                 $scope.$digest();
                 }
             } else {
             ChatFactory.peers[conn.peer] = conn;
-            ChatFactory.peers[conn.peer] = conn;
+           //ChatFactory.peers[conn.peer] = conn;
             $scope.$digest();
             }
         })
