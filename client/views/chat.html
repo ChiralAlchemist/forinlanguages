@@ -2,8 +2,10 @@
         <i class = "comments icon"></i>
         <div class="content">Chat Room:</div>
         </h3>
+         <label for="input">Username:</label>
+        <input type="text" name="username" ng-model="username">
         <div class='chatArea'>
-          <form ng-submit ='sendData("message")'>
+          <form ng-submit ='sendData(message,username)'>
             <div> Enter Chat messages</div>
             <textarea name="message" id="textInput" ng-model='message' ng-keypress="isEnter($event,sendData,['message'])" required></textarea>
             <div>{{ test }} </div>

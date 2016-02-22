@@ -3,6 +3,7 @@ angular.module('forinlanguages', [
   'LocalForageModule',
   'forinlanguages.services',
   'forinlanguages.peer',
+ 'forinlanguages.chat',
   'ui.router'
 ])
 
@@ -17,9 +18,8 @@ angular.module('forinlanguages', [
             "ConnectionView": {templateUrl:"../views/connection.html",
                              controller: "PeerController"},
             "ChatView" : {templateUrl:"../views/chat.html",
-                        controller:"PeerController"}, 
+                        controller:"ChatController"}, 
         },
-        controller: "PeerController"
     });
 });
 
