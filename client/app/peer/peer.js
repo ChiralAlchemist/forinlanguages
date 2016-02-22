@@ -1,3 +1,4 @@
+<<<<<<< 0a98f9b5bdb2af57180921684df136865d9a5f78
 angular.module('forinlanguages.peer', [])
 
 .controller('PeerController', function($scope, $window, $location, $localForage, PeerFactory) {
@@ -216,4 +217,3 @@ angular.module('forinlanguages.peer', [])
     }
   });
 
-})
