@@ -1,0 +1,36 @@
+<h3 class ="ui header">
+        <i class = "comments icon"></i>
+        <div class="content">Chat Room:</div>
+        </h3>
+        <div class='chatArea'>
+          <form ng-submit ='sendData("message")'>
+            <div> Enter Chat messages</div>
+            <textarea name="message" id="textInput" ng-model='message' ng-keypress="isEnter($event,sendData,['message'])" required></textarea>
+            <div>{{ test }} </div>
+            <button type='submit'>Send</button>
+          </form>
+          
+          
+          
+          <h3>Messages</h3>
+          <div class= "messageBoard ui feed">
+            <div  placeholder="No new messages" ng-model ='messages'>
+              <div class='message_item' ng-repeat="val in messages track by $index">
+                <div class="event">
+                  <div class="label">
+                    <img class="ui avatar image" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Vanamo_Logo.png">
+                    <a class="user">{{ val.name }}</a>
+                  </div>
+                  <div class="content">
+                    
+                    
+                    {{ val.rawdat }}
+                    <div class="date">{{ val.time }}</div>
+                    
+                    
+                  </div>
+                  </div> <!--envent closing tag -->
+                </div>
+              </div>
+            </div>
+          </div>
