@@ -1,6 +1,6 @@
 angular.module('forinlanguages.peer', [])
 
-.controller('PeerController', function($scope, $window, $location, $localForage, PeerFactory) {
+.controller('PeerController', function($scope, $window, $location, $localForage, PeerFactory,ChatFactory) {
   // Init input models
   $scope.person = "";
   $scope.message = "";
@@ -48,6 +48,7 @@ angular.module('forinlanguages.peer', [])
       function(data) {
         console.log(data);
         $scope.messages.push(data);
+        ChatFactory.messages.push(data);
         $scope.$digest();
       },
       function(conn) {
@@ -58,6 +59,7 @@ angular.module('forinlanguages.peer', [])
             $scope.$digest();
           }
         } else {
+          ChatFactory.peers[conn.peer] = conn;
           $scope.peers[conn.peer] = conn;
           $scope.$digest();
         }

@@ -1,7 +1,6 @@
 angular.module('forinlanguages.services', [])
 
 .factory('PeerFactory', function($localForage) {
-
   var makePeer = function(cb) {
     var newurl;
     var newPeer = new Peer({
@@ -75,4 +74,38 @@ angular.module('forinlanguages.services', [])
     sendData: sendData,
     chunker: chunker
   }
+})
+.factory("ChatFactory", function(){
+  var messages = [];
+  var peers = {};
+
+  var sendData = function(data, peers) {
+    console.log("Sending:", data);
+    for(var x in peers) {
+      peers[x].send(data);
+    }
+  };
+  
+  var sendMessage = function(message, username) {
+    if(Object.keys( peers).length === 0) {
+      return alert("Can't send data to no users!");
+    }
+    if(message) {
+      if(message === "") {
+        return alert("can't use no text");
+      }
+      var dataToSend = {
+        rawdat: message,
+        time: moment().format('h:mm:ss a'),
+        name: username || "anonymous",
+        type: "message"
+      };
+      sendData(dataToSend, peers);
+      messages.push(dataToSend);
+    } else {
+      alert("you screwed up");
+    }
+  };
+
+ return {messages: messages, peers:peers, sendMessage: sendMessage}
 })

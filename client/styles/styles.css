@@ -9,6 +9,7 @@ textarea {
     color:blue;
     word-wrap: break-word;
     overflow-y: auto;
+    border: 1px black solid;
 }
 
 #textInput {
