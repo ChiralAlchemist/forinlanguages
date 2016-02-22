@@ -14,11 +14,14 @@ angular.module('forinlanguages', [
     .state('app', {
         url: "/app",
         views: {
-            "ConnectionView": {templateUrl:"../views/connection.html"},
-            "ChatView" : {templateUrl:"../views/chat.html"}, 
-        }
-    })
-})
+            "ConnectionView": {templateUrl:"../views/connection.html",
+                             controller: "PeerController"},
+            "ChatView" : {templateUrl:"../views/chat.html",
+                        controller:"PeerController"}, 
+        },
+        controller: "PeerController"
+    });
+});
 
 // .config(function($routeProvider,$httpProvider){
 //     $routeProvider
